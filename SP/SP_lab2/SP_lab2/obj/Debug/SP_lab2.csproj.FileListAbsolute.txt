@@ -1,0 +1,10 @@
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\bin\Debug\SP_lab2.exe.config
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\bin\Debug\SP_lab2.exe
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\bin\Debug\SP_lab2.pdb
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.csprojAssemblyReference.cache
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.Form1.resources
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.Properties.Resources.resources
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.csproj.GenerateResource.cache
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.csproj.CoreCompileInputs.cache
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.exe
+C:\Users\123\source\repos\6 семак\SP\SP_lab2\SP_lab2\obj\Debug\SP_lab2.pdb
