@@ -58,7 +58,7 @@ namespace SP_lab2
                     {
                         flag = true;
                         D++;
-                        t_pr += (t1 - t2);
+                        t_pr += (t - t2);
                     }
                     r2 = rand.NextDouble();
                     t2 += (-1 / lyambda2 * Math.Log(r2));
@@ -66,7 +66,7 @@ namespace SP_lab2
                 }
                 chart.Series[0].Points.AddXY(t, skl);
             } while (t < Tn);
-            text.Text = (t_pr*60).ToString();
+            text.Text = t_pr.ToString();
         }
     }
 }

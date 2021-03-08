@@ -15,7 +15,6 @@ namespace SP_lab2
         public Form1()
         {
             InitializeComponent();
-            chart1.Series[0].BorderWidth = 150;
         }
 
         private void button1_Click(object sender, EventArgs e)
