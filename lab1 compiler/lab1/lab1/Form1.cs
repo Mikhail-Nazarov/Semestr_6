@@ -345,16 +345,29 @@ namespace lab1
             char[] text = str.ToCharArray();
             for (int i = 0; i< text.Length;i++)
             {
+                if (text[i]=='\n')
+                {
+
+                }
                 if (stateMachine.SymbolChecking(text[i]) == false)
                 {
                     stateMachine = new DetermStateMachine();
+                    i--;
                 }
-                if (stateMachine.getState().ToString() == "q7")
+                if (stateMachine.getState().ToString() == "q5")
                 {
+                    richTextBox2.Text += stateMachine.states + "\n";
+                    //stateMachine.states = "q1->";
                     richTextBox2.Text += stateMachine.getStr() + "\n";
                     stateMachine = new DetermStateMachine();
                 }
             }
+        }
+
+        private void callHelp_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText("newFile.html", Properties.Resources.spravka);
+            System.Diagnostics.Process.Start("newFile.html");
         }
     }
 }

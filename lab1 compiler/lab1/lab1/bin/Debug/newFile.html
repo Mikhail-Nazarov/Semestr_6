@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Справка </title>
+</head>
+<body>
+	<h2>О программе.</h2>
+	<p>Данное приложение представляет собой текстовый редактор с реализованными в нем всеми необходимыми функциями для работы с текстом.</p>
+	<h2>Раздел <em>Файл</em>:</h2>
+	<ol>
+  			<li><em>Создать</em> - создает новый текстовый файл;</li>
+  			<li><em>Открыть</em> - открывает текстовый файл;</li>		
+  			<li><em>Сохранить</em> - сохраняет редактируемый текстовый файл;</li>
+  			<li><em>Сохранить как</em> - сохраняет редактируемый текстовый файл с возможностью выбора места для сохранения;</li>
+  			<li><em>Выход</em> - закрытие приложения.</li>
+	</ol>
+	<h2>Раздел <em>Правка</em>:</h2>
+	<ol>
+  			<li><em>Отменить</em> - отменяет последнее изменение;</li>
+  			<li><em>Повторить</em> - возвращает отмененное действие;</li>		
+  			<li><em>Вырезать</em> - вырезает выделенный текст;</li>
+  			<li><em>Копировать</em> - копирует выделенный текст;</li>
+  			<li><em>Вставить</em> - вставляет скопированный текст;</li>
+  			<li><em>Удалить</em> - удаляет выделенный текст;</li>
+  			<li><em>Выделить все</em> - закрытие приложения.</li>
+	</ol>
+	<h2>О регулярных выражениях.</h2>
+	<div>
+	<p>Регулярные выражения в данном приложении позволяют найти все фамилии с инициалами в тексте, а также строку, в которой встретилась фамилия, и номер символа, с которого начинается фамилия. Фамилия может быть двойной, инициалы могут быть расположены до и после фамилии. Фамилия и инициалы должны иметь вид: <em>Римский-Корсаков Н.А.</em> или <em>А.С. Пушкин</em>. </p>
+	<h2>О конечном автомате.</h2>
+	<h3>Алфавит:</h3>
+	<p>Заглавные русские буквы (А-Я), Строчные русские буквы (а-я), Пробел, Точка, Дефис.</p>
+	<h3>Список состояний:</h3>
+	<p>q1 - начальное, q2, q31, q32, q33, q34, q35, q36, q37, q41, q42, q43, q44, q45, q5 - конечное</p>
+	<h3>Таблица переходов:</h3>
+	<table border="1px">
+		<tr> <th></th><th>q1</th><th>q2</th><th>q31</th><th>q32</th><th>q33</th><th>q34</th><th>q35</th><th>q36</th><th>q37</th>
+			<th>q41</th><th>q42</th><th>q43</th><th>q44</th><th>q45</th><th>q5</th></tr>
+		<tr><th>q1</th><th></th><th>А-Я</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q2</th><th></th><th></th><th>а-я</th><th></th><th></th><th></th><th></th><th></th><th></th><th>.</th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q31</th><th></th><th></th><th></th><th>-</th><th></th><th>Space</th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q32</th><th></th><th></th><th></th><th></th><th>А-Я</th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q33</th><th></th><th></th><th></th><th></th><th></th><th>Space</th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q34</th><th></th><th></th><th></th><th></th><th></th><th></th><th>А-Я</th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q35</th><th></th><th>а-я</th><th></th><th></th><th></th><th></th><th></th><th>.</th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q36</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>А-Я</th><th></th>
+			<th></th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q37</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th></th><th>.</th></tr>
+		<tr><th>q41</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th>А-Я</th><th></th><th></th><th></th><th></th></tr>
+		<tr><th>q42</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th>.</th><th></th><th></th><th></th></tr>
+		<tr><th>q43</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th>А-Я, Space</th><th></th><th></th></tr>
+		<tr><th>q44</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th>-</th><th>Space</th></tr>
+		<tr><th>q45</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+			<th></th><th></th><th></th><th>А-Я</th><th></th></tr>
+	</table>
+	<h3>Граф:</h3>
+	<img src="graph.png" width="800">
+	</div>
+</body>
+</html>

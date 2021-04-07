@@ -67,9 +67,9 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +160,7 @@
             // repeat
             // 
             this.repeat.Name = "repeat";
-            this.repeat.Size = new System.Drawing.Size(224, 26);
+            this.repeat.Size = new System.Drawing.Size(186, 26);
             this.repeat.Text = "Повторить";
             this.repeat.Click += new System.EventHandler(this.repeat_Click);
             // 
@@ -281,13 +281,14 @@
             // callHelp
             // 
             this.callHelp.Name = "callHelp";
-            this.callHelp.Size = new System.Drawing.Size(197, 26);
+            this.callHelp.Size = new System.Drawing.Size(224, 26);
             this.callHelp.Text = "Вызов справки";
+            this.callHelp.Click += new System.EventHandler(this.callHelp_Click);
             // 
             // about
             // 
             this.about.Name = "about";
-            this.about.Size = new System.Drawing.Size(197, 26);
+            this.about.Size = new System.Drawing.Size(224, 26);
             this.about.Text = "О программе";
             this.about.Click += new System.EventHandler(this.about_Click);
             // 
@@ -396,6 +397,16 @@
             this.toolStripButton8.Text = "Вставить";
             this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton9.Text = "Очистить";
+            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -418,16 +429,6 @@
             this.richTextBox2.Size = new System.Drawing.Size(1067, 191);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton9.Text = "Очистить";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // Form1
             // 
