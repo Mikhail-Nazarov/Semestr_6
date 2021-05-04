@@ -19,8 +19,6 @@ namespace lab1
         private string startText = string.Empty;
         List<string> LastData = new List<string>();
         int undoCount = 0;
-        Stack<string> UndoList = new Stack<string>();
-        Stack<string> RedoList = new Stack<string>();
         public Form1()
         {
             InitializeComponent();
@@ -321,6 +319,7 @@ namespace lab1
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = string.Empty;
+            richTextBox2.Text = string.Empty;
         }
 
         private void start_Click(object sender, EventArgs e)
@@ -345,14 +344,9 @@ namespace lab1
             char[] text = str.ToCharArray();
             for (int i = 0; i< text.Length;i++)
             {
-                if (text[i]=='\n')
-                {
-
-                }
-                if (stateMachine.SymbolChecking(text[i]) == false)
+                if (stateMachine.SymbolChecking(text[i]) == false || stateMachine.str==string.Empty)
                 {
                     stateMachine = new DetermStateMachine();
-                    i--;
                 }
                 if (stateMachine.getState().ToString() == "q5")
                 {
@@ -362,6 +356,8 @@ namespace lab1
                     stateMachine = new DetermStateMachine();
                 }
             }
+            Scaner scaner = new Scaner(richTextBox1.Text);
+            richTextBox2.Text = scaner.result;
         }
 
         private void callHelp_Click(object sender, EventArgs e)

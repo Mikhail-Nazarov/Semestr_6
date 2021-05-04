@@ -21,12 +21,14 @@ namespace lab1
         LowercaseLetters,
         Space,
         Dot,
-        Dash
+        Dash,
+        Zapitaya
     }
     class DetermStateMachine
     {
         private StateMachine<States, Triggers> stateMachine;
-        string str;
+        public string str { get; set; }
+        char preSymb;
         public string states { set; get; } = "q1->";
         public DetermStateMachine()
         {
@@ -59,13 +61,15 @@ namespace lab1
                 .Permit(Triggers.Space, States.q44).OnEntry(() => states += "q43->");
             stateMachine.Configure(States.q44).Permit(Triggers.Dash, States.q45)
                 .Permit(Triggers.Space, States.q5).OnEntry(() => states += "q44->")
+                .Permit(Triggers.Dot, States.q5)
+                .Permit(Triggers.Zapitaya, States.q5)
                 .OnExit(() => states += "q5");
             stateMachine.Configure(States.q45).Permit(Triggers.CapitalLetters, States.q44);
         }
         public void CapitalLetters()
         {
             if (stateMachine.CanFire(Triggers.CapitalLetters))
-            stateMachine.Fire(Triggers.CapitalLetters);
+                stateMachine.Fire(Triggers.CapitalLetters);
         }
         public void LowercaseLetters()
         {
@@ -90,6 +94,12 @@ namespace lab1
                 stateMachine.Fire(Triggers.Dash);
             else str = "";
         }
+        void Zap()
+        {
+            if (stateMachine.CanFire(Triggers.Zapitaya))
+                stateMachine.Fire(Triggers.Zapitaya);
+            else str = "";
+        }
         public States getState()
         {
             var q = stateMachine.State;
@@ -100,14 +110,21 @@ namespace lab1
         {
             int kode = (int)symbol;
             str += symbol;
-            if (symbol == '\n') str = "";
+            if (str.Length>1)
+                preSymb = str[str.Length - 2];
+            //if (symbol == '\n') str = "";
             if ((kode >= 1040 && kode <= 1071) || kode == 1025)
+            {
+                if (stateMachine.State == States.q31)
+                    str = symbol.ToString();
                 CapitalLetters();
+            }
             else if ((kode >= 1072 && kode <= 1103) || kode == 1105)
                 LowercaseLetters();
             else if (symbol == ' ') Space();
             else if (symbol == '.') Dot();
             else if (symbol == '-') Dash();
+            else if (symbol == ',') Zap();
             else
             {
                 str = "";
